@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @element.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @element.url %>
+</p>
+
+<p>
+  <strong>Html tag:</strong>
+  <%= @element.html_tag %>
+</p>
+
+<p>
+  <strong>Html subtag:</strong>
+  <%= @element.html_subtag %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @element.order %>
+</p>
+
+<%= link_to 'Edit', edit_element_path(@element) %> |
+<%= link_to 'Back', elements_path %>
