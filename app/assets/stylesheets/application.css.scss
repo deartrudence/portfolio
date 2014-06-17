@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap
+ *= require_self
+ *= require_tree .
+ */
+
+.row {
+	width: 1340px;
+	margin-left: -50px;
+}
+.container.show_page {
+	margin-top: 60px;
+}
+.container.index_page {
+	margin-top: 60px;
+}
+.container.edit_element_page {
+	margin-top: 60px;
+}
+ ul{
+    list-style-type: none;
+    padding: 0px;
+}
+
+.feature_image{
+	float: right;
+	margin-right: 170px;
+} 
+
+
+.description{
+	float: left;
+	width: 55%;
+	margin: 10px;
+	padding: 10px;
+}
+
+h1{
+	margin: 10px;
+	padding: 10px;
+}
+
+img{
+	margin: 10px;
+	margin-bottom: 30px;
+}
+
+.element_index {
+	width: 375px;
+	height: 250px;
+}
+
+.hs_container{
+    clear:both;
+}
+
+.navbar-inverse{
+	background-color: #FFF;
+}
+
+.navbar-inverse { background-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #FFFFFF}
+/*.dropdown-menu { background-color: #FFFFFF}*/
+/*.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #FFFFFF}*/
+.navbar-inverse { background-image: none; }
+/*.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }*/
+.navbar-inverse { border-color: #FFFFFF}
+.navbar-inverse .navbar-brand { color: #000000}
+.navbar-inverse .navbar-brand:hover { color: #000000}
+.navbar-inverse .navbar-nav>li>a { color: #FFFFFF}
+/*.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #000000}*/
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li { color: #000000}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #000000}
+.navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { color: #999999}
+/*.dropdown-menu>li>a { color: #000000}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #999}*/
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-top-color: #000000}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #000000}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
+
+
+

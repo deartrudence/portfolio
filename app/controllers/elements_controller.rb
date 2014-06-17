@@ -69,6 +69,6 @@ class ElementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def element_params
-      params.require(:element).permit(:name, :url, :html_tag, :html_subtag, :order)
+      params.require(:element).permit(:name, :url, :html_tag, :html_subtag, :order, :project_id)
     end
 end

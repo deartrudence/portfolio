@@ -11,27 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :url %><br>
-    <%= f.text_field :url %>
+    <%= f.text_field :url,class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :html_tag %><br>
-    <%= f.text_field :html_tag %>
+    <%= f.text_field :html_tag, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :html_subtag %><br>
-    <%= f.text_field :html_subtag %>
+    <%= f.text_field :html_subtag, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :order %><br>
-    <%= f.number_field :order %>
+    <%= f.number_field :order, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.collection_select :project_id, Project.all, :id, :name, {prompt: "project"}, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

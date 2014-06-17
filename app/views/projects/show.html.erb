@@ -1,19 +1,33 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+<div class="container show_page">
+  <div class='row'>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+    <h1><%= @project.name %></h1>
 
-<p>
-  <strong>Feature image:</strong>
-  <%= @project.feature_image %>
-</p>
+    <p class='description'>
+      <%= @project.description %>
+    </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+    <div class='feature_image' 'img-responsive'> 
+      <img src='<%= @project.feature_image %>'>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <ul>
+      <% for @element in @project.elements %>
+      
+        <li>
+            <img src="<%= @element.url %>" alt="" class="img-responsive">
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+
+</div>

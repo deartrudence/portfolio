@@ -1,29 +1,38 @@
+
+<div class="container index_page">
 <h1>Listing projects</h1>
+  <div class="row">
+      <ul>
+        <% @projects.each  do |project| %>
+          <%= link_to project_path(project) do %>
+            
+            <li class='col-md-4 col-sm-6 '>
+                <div class='shuffle-me'>
+                  <img src="<%= project.feature_image %>" alt="" class='img-repsonsive index_image hs_visible'  />
+                  <% project.elements.each do |element| %>
+                    <img src="<%= element.url %>" class="element_index" alt=""/>
+                  <% end %>
+                </div>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Feature image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.description %></td>
-        <td><%= project.feature_image %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
 <%= link_to 'New Project', new_project_path %>
+
+        <!-- The JavaScript -->
+        <script>
+          $(".shuffle-me").shuffleImages({
+             trigger: "imageMouseMove",
+             triggerTarget: false,
+             mouseMoveTrigger: 50, 
+             hoverTrigger: 200,
+             scrollTrigger: 100, 
+             target: "> img"
+           });
+        </script>
