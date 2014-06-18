@@ -3,10 +3,10 @@
 <div class='container edit_element_page'>
   <div class='row'>
 
-    <h1>Editing element</h1>
+    <h1>Editing element <%=@element.name%> in Project <%=@project.name%></h1>
 
     <%= render 'form' %>
-    <%= link_to 'Back', element_path(@element), class: 'btn btn-default' %>
+    <%= link_to 'Back', edit_project_path(@project), class: 'btn btn-default' %>
 
 
   </div>

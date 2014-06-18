@@ -15,21 +15,23 @@ class ElementsController < ApplicationController
   # GET /elements/new
   def new
     @element = Element.new
+    @project = Project.find(params[:project])
   end
 
   # GET /elements/1/edit
   def edit
-
+    @project = Project.find(params[:project])
   end
 
   # POST /elements
   # POST /elements.json
   def create
     @element = Element.new(element_params)
+    @element.project_id = Project.find(params[:project]).id
 
     respond_to do |format|
       if @element.save
-        format.html { redirect_to @element, notice: 'Element was successfully created.' }
+        format.html { redirect_to edit_element_path(@element), notice: 'Element was successfully created.' }
         format.json { render :show, status: :created, location: @element }
       else
         format.html { render :new }
@@ -43,7 +45,7 @@ class ElementsController < ApplicationController
   def update
     respond_to do |format|
       if @element.update(element_params)
-        format.html { redirect_to @project, notice: 'Element was successfully updated.' }
+        format.html { redirect_to edit_element_path(@element), notice: 'Element was successfully updated.' }
         format.json { render :show, status: :ok, location: @element }
       else
         format.html { render :edit }

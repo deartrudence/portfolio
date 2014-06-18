@@ -1,7 +1,7 @@
 
 <div class='container edit_element_page'>
   <div class='row'>
-    <h1>Edit project</h1>
+    <h1>Editing project <%=@project.name%></h1>
 
     <%= render 'form' %>
 
@@ -11,7 +11,7 @@
     <hr>
     <h2> Elements </h2>
     <hr>
-    <%= link_to 'Add New Element', new_element_path, class: 'btn btn-default' %>
+    <%= link_to 'Add New Element', new_element_path(:project => @project), class: 'btn btn-default' %>
 
     <br/>
     <br/>
@@ -20,10 +20,10 @@
     <ul>
       <% for @element in @project.elements %>
       
-          <li><%= link_to "#{@element.name}", edit_element_path(@element) %></li>
-          <li><%= link_to edit_element_path(@element) do %>
+          <li><%= link_to "#{@element.name}", edit_element_path(@element, :project => @project) %></li>
+          <li><%= link_to edit_element_path(@element, :project => @project) do %>
             <img src="<%= @element.url %>" alt="" class="img-responsive"></li>
-          <li><%= link_to "Delete", element_path(@element), method: :delete, class: 'btn btn-danger btn-sm' %>
+          <li><%= link_to "Delete", element_path(@element), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></li>
             <hr>
             <% end %>
       <% end %>
