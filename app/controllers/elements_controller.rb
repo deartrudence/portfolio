@@ -1,6 +1,7 @@
 class ElementsController < ApplicationController
   before_action :set_element, only: [:show, :edit, :update, :destroy]
 
+
   # GET /elements
   # GET /elements.json
   def index
