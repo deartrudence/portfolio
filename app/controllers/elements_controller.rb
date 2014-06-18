@@ -19,6 +19,7 @@ class ElementsController < ApplicationController
 
   # GET /elements/1/edit
   def edit
+
   end
 
   # POST /elements
@@ -42,7 +43,7 @@ class ElementsController < ApplicationController
   def update
     respond_to do |format|
       if @element.update(element_params)
-        format.html { redirect_to @element, notice: 'Element was successfully updated.' }
+        format.html { redirect_to @project, notice: 'Element was successfully updated.' }
         format.json { render :show, status: :ok, location: @element }
       else
         format.html { render :edit }

@@ -33,6 +33,14 @@
     padding: 0px;
 }
 
+#admin{
+	text-align: center;
+}
+
+#projects{
+	text-align: center;
+}
+
 .feature_image{
 	float: right;
 	margin-right: 170px;
@@ -83,7 +91,7 @@ img{
 .navbar-inverse { border-color: #FFFFFF}
 .navbar-inverse .navbar-brand { color: #000000}
 .navbar-inverse .navbar-brand:hover { color: #000000}
-.navbar-inverse .navbar-nav>li>a { color: #FFFFFF}
+.navbar-inverse .navbar-nav>li>a { color: #000000}
 /*.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #000000}*/
 .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li { color: #000000}
 .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #000000}
