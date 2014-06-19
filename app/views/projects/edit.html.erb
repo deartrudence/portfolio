@@ -23,7 +23,7 @@
           <li><%= link_to "#{@element.name}", edit_element_path(@element, :project => @project) %></li>
           <li><%= link_to edit_element_path(@element, :project => @project) do %>
             <img src="<%= @element.url %>" alt="" class="img-responsive"></li>
-          <li><%= link_to "Delete", element_path(@element), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></li>
+          <li><%= link_to "Delete", element_path(@element, :project => @project), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></li>
             <hr>
             <% end %>
       <% end %>

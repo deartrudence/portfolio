@@ -15,10 +15,10 @@
  *= require_tree .
  */
 
-.row {
+/*.row {
 	width: 1340px;
 	margin-left: -50px;
-}
+}*/
 .container.show_page {
 	margin-top: 60px;
 }
@@ -32,6 +32,9 @@
     list-style-type: none;
     padding: 0px;
 }
+.img{
+	width: 100%;
+}
 
 #admin{
 	text-align: center;
@@ -44,18 +47,6 @@
 	text-align: center;
 }
 
-.feature_image{
-	float: right;
-	margin-right: 170px;
-} 
-
-
-.description{
-	float: left;
-	width: 55%;
-	margin: 10px;
-	padding: 10px;
-}
 
 .description_area{
   height: 500px;
@@ -75,10 +66,12 @@ img{
 	width: 375px;
 	height: 250px;
 }
-
-.hs_container{
-    clear:both;
+.index_image {
+	width: 375px;
+	height: 250px;
 }
+
+
 
 .navbar-inverse{
 	background-color: #FFF;

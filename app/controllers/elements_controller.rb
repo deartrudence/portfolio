@@ -60,7 +60,7 @@ class ElementsController < ApplicationController
   def destroy
     @element.destroy
     respond_to do |format|
-      format.html { redirect_to elements_url, notice: 'Element was successfully destroyed.' }
+      format.html { redirect_to edit_project_path(params[:project]), notice: 'Element was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +73,6 @@ class ElementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def element_params
-      params.require(:element).permit(:name, :url, :html_tag, :html_subtag, :order, :project_id)
+      params.require(:element).permit(:name, :url, :html_tag, :html_subtag, :order, :project_id, :project)
     end
 end

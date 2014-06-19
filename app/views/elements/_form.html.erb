@@ -31,9 +31,11 @@
     <%= f.label :order %><br>
     <%= f.number_field :order, class: 'form-control' %>
   </div>
-  <input type="hidden" name="project" value="<%=@project.id%>">
   <div class="actions">
     <%= f.submit class: 'btn btn-primary' %>
   </div>
+  <input type="hidden" name="project" value="<%=@project.id %>">
+  <%=@project.id %>
+  
 <% end %>
 
