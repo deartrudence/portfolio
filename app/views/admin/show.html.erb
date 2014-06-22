@@ -14,7 +14,7 @@
         <% @projects.each do |project| %>
           <li><%= link_to "#{project.name}", edit_project_path(project) %></li>
           <li><%= link_to edit_project_path(project) do %>
-            <img src="<%=project.feature_image%>"></li>
+            <img src="<%=project.feature_img.url%>" class="img-responsive"></li>
           <% end %>
         <% end %>
       </ul>

@@ -23,7 +23,12 @@
       
           <li><%= link_to "#{@element.name}", edit_element_path(@element, :format => @project) %></li>
           <li><%= link_to edit_element_path(@element, :format => @project) do %>
-            <<%=@element.html_tag.html_safe %><%=@element.url%><%=@element.html_subtag.html_safe%>>
+            <!-- If there's a video url use that, otherwise use uploaded image -->
+              <% if @element.url.present? %>
+                  <<%=@element.html_tag.html_safe %><%=@element.url%><%=@element.html_subtag.html_safe%>>
+              <% else %>
+                  <<%=@element.html_tag.html_safe %><%=@element.element_img.url%><%=@element.html_subtag.html_safe%>>
+                <% end %>
           </li>
           <li><%= link_to "Delete", element_path(@element, :project => @project), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></li>
             <hr>

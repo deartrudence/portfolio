@@ -24,7 +24,12 @@
       <% for @element in @project.elements %>
         <div class="col-xs-12">
           <li>
-              <<%=@element.html_tag.html_safe %><%=@element.url%><%=@element.html_subtag.html_safe%>>
+                  <!-- If there's a video url use that, otherwise use uploaded image -->
+                  <% if @element.url.present? %>
+                      <<%=@element.html_tag.html_safe %><%=@element.url%><%=@element.html_subtag.html_safe%>>
+                  <% else %>
+                      <<%=@element.html_tag.html_safe %><%=@element.element_img.url%><%=@element.html_subtag.html_safe%>>
+                    <% end %>
               
           </li>
         </div>

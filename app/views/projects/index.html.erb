@@ -7,7 +7,8 @@
           <%= link_to project_path(project) do %>
             
             <li class='col-md-4 col-sm-6 '>
-                  <img src="<%= project.feature_image %>" alt="" class='img-repsonsive img'  />
+                <img src="<%= project.feature_img.url %>" alt="" class='img-repsonsive img'  />
+             </li>
         <% end %>
         <% end %>
       </ul>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618215954) do
+ActiveRecord::Schema.define(version: 20140622121318) do
 
   create_table "elements", force: true do |t|
     t.string   "name"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 20140618215954) do
     t.datetime "updated_at"
     t.string   "element"
     t.integer  "project_id"
+    t.string   "element_img_file_name"
+    t.string   "element_img_content_type"
+    t.integer  "element_img_file_size"
+    t.datetime "element_img_updated_at"
   end
 
   add_index "elements", ["project_id"], name: "index_elements_on_project_id"
@@ -33,6 +37,10 @@ ActiveRecord::Schema.define(version: 20140618215954) do
     t.string   "feature_image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "feature_img_file_name"
+    t.string   "feature_img_content_type"
+    t.integer  "feature_img_file_size"
+    t.datetime "feature_img_updated_at"
   end
 
   create_table "users", force: true do |t|

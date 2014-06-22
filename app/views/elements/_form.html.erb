@@ -21,8 +21,12 @@
     <%= f.text_field :name, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :url %><br>
+    <%= f.label "Video URL" %><br>
     <%= f.text_field :url,class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Upload Image" %><br>
+    <%=f.file_field :element_img %>
   </div>
   <div class="form-group">
     <%= f.label :html_tag %><br>
