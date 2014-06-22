@@ -17,6 +17,7 @@ end
 #for image management
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'aws-sdk'
+gem 'aws-s3'
 
 #User Authentication
 gem 'devise'
