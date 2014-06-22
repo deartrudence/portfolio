@@ -18,6 +18,7 @@
           <li><%= link_to "#{project.name}", edit_project_path(project) %></li>
           <li><%= link_to edit_project_path(project) do %>
             <img src="<%=project.feature_img.url%>" class="img-responsive"></li>
+            <li><%= link_to "Delete", project_path(project), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></li>
           <% end %>
         <% end %>
       </ul>
