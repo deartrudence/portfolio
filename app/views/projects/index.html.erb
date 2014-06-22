@@ -7,32 +7,8 @@
           <%= link_to project_path(project) do %>
             
             <li class='col-md-4 col-sm-6 '>
-                <div class='shuffle-me'>
-                  <img src="<%= project.feature_image %>" alt="" class='img-repsonsive index_image'  />
-                  <% project.elements.each do |element| %>
-                    <img src="<%= element.url %>" class="element_index" alt=""/>
-                  <% end %>
-                </div>
-            </li>
-          <% end %>
+                  <img src="<%= project.feature_image %>" alt="" class='img-repsonsive img'  />
+        <% end %>
         <% end %>
       </ul>
-  </div>
-</div>
-
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
-
-        <!-- The JavaScript -->
-        <script>
-          $(".shuffle-me").shuffleImages({
-             trigger: "imageMouseMove",
-             triggerTarget: false,
-             mouseMoveTrigger: 50, 
-             hoverTrigger: 200,
-             scrollTrigger: 100, 
-             target: "> img"
-           });
-        </script>
+                

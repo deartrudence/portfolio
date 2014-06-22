@@ -5,9 +5,12 @@
 
     <h1>Editing element <%=@element.name%> in project <%=@project.name%></h1>
 
-    	<%= render 'form' %>
-
+      <%= render 'form' %>
+	
+	<br>
     <%= link_to 'Back', edit_project_path(@project), class: 'btn btn-default' %>
+
+    <<%=@element.html_tag.html_safe %><%=@element.url%><%=@element.html_subtag.html_safe%>>
 
 
   </div>

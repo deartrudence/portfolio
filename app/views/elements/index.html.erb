@@ -8,6 +8,7 @@
       <th>Html tag</th>
       <th>Html subtag</th>
       <th>Order</th>
+      <th>Project</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= element.html_tag %></td>
         <td><%= element.html_subtag %></td>
         <td><%= element.order %></td>
+        <td><%= element.project_id %></td>
         <td><%= link_to 'Show', element %></td>
         <td><%= link_to 'Edit', edit_element_path(element) %></td>
         <td><%= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' } %></td>

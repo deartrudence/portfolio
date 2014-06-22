@@ -4,7 +4,8 @@
     <h1>Editing project <%=@project.name%></h1>
 
     <%= render 'form' %>
-
+    
+    <br>
     <%= link_to 'Preview', @project, class: 'btn btn-default' %>
     <%= link_to 'Back', admin_path, class: 'btn btn-default' %>
 
@@ -20,9 +21,10 @@
     <ul>
       <% for @element in @project.elements %>
       
-          <li><%= link_to "#{@element.name}", edit_element_path(@element, :project => @project) %></li>
-          <li><%= link_to edit_element_path(@element, :project => @project) do %>
-            <img src="<%= @element.url %>" alt="" class="img-responsive"></li>
+          <li><%= link_to "#{@element.name}", edit_element_path(@element, :format => @project) %></li>
+          <li><%= link_to edit_element_path(@element, :format => @project) do %>
+            <<%=@element.html_tag.html_safe %><%=@element.url%><%=@element.html_subtag.html_safe%>>
+          </li>
           <li><%= link_to "Delete", element_path(@element, :project => @project), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></li>
             <hr>
             <% end %>

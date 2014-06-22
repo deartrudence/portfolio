@@ -28,6 +28,14 @@
 .container.edit_element_page {
 	margin-top: 60px;
 }
+.notice {
+	border: 2px solid;
+	padding: 10px 10px 10px 10px;
+}
+#error_explanation{
+	border: 2px solid red;
+	padding: 10px 10px 10px 10px;
+}
  ul{
     list-style-type: none;
     padding: 0px;
@@ -57,18 +65,21 @@ h1{
 	padding: 10px;
 }
 
-img{
+img {
 	margin: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
+}
+iframe {
+	margin: 10px;
 }
 
 .element_index {
-	width: 375px;
-	height: 250px;
+	width: 360px;
+	height: 360px;
 }
 .index_image {
-	width: 375px;
-	height: 250px;
+	width: 360px;
+	height: 360px;
 }
 
 
