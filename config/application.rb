@@ -23,8 +23,8 @@ module Portfolio
     config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {
-        access_key_id: 'AKIAIFPMVYGC4ZT25NFQ',
-        secret_access_key: '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',
+        access_key_id: 'AKIAJDTNYOIJ5PEK2WPA',
+        secret_access_key: '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',
         bucket: "BrianPortfolio"
         }
     }
