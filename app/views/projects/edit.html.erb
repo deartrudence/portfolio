@@ -16,25 +16,39 @@
 
     <br/>
     <br/>
+  </div>
+  <div class='row'>
+  <table id="sortable" class="table" data-update_url="<%= sort_elements_path%>">
 
+    <thead>
+      <tr>
+        <th>Order</th>
+        <th>Element</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
 
-    <ul>
-      <% for @element in @project.elements %>
-      
-          <li><%= link_to "#{@element.name}", edit_element_path(@element, :format => @project) %></li>
-          <li><%= link_to edit_element_path(@element, :format => @project) do %>
+    <tbody>
+      <% for element in @project.elements %>
+        <tr class="item" data-item_id="<%= element.id%>">   
+          <td><%= element.order %></td>   
+          <td><%= link_to "#{element.name}", edit_element_path(element, :format => @project) %></td>
+          <td><%= link_to edit_element_path(element, :format => @project) do %>
             <!-- If there's a video url use that, otherwise use uploaded image -->
-              <% if @element.url.present? %>
-                  <<%=@element.html_tag.html_safe %><%=@element.url%><%=@element.html_subtag.html_safe%>>
+              <% if element.url.present? %>
+                  <<%=element.html_tag.html_safe %><%=element.url%><%=element.html_subtag.html_safe%>>
               <% else %>
-                  <<%=@element.html_tag.html_safe %><%=@element.element_img.url%><%=@element.html_subtag.html_safe%>>
+                  <<%=element.html_tag.html_safe %><%=element.element_img.url%><%=element.html_subtag.html_safe%>>
                 <% end %>
-          </li>
-          <li><%= link_to "Delete", element_path(@element, :project => @project), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></li>
+          </td>
+          <td><%= link_to "Delete", element_path(element, :project => @project), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></td>
             <hr>
             <% end %>
+          </tr>
       <% end %>
-    </ul>
+    </tbody>
+  </table>
 
 
     

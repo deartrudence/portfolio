@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :elements
+  resources :elements do
+    post :sort, on: :collection
+  end
 
-  resources :projects
+  resources :projects do
+    post :sort, on: :collection
+  end
+
+  resources :elements do
+    post :sort, on: :collection
+  end
 
   get 'admin' => 'admin#show'
 

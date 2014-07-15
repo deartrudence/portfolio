@@ -1,13 +1,13 @@
 <h1>Listing elements</h1>
 
-<table>
+<table id="sortable" class="table" data-update_url="<%= sort_elements_path%>">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Url</th>
+      <th>order</th>
       <th>Html tag</th>
       <th>Html subtag</th>
-      <th>Order</th>
+      <th>ID</th>
       <th>Project</th>
       <th colspan="3"></th>
     </tr>
@@ -15,16 +15,16 @@
 
   <tbody>
     <% @elements.each do |element| %>
-      <tr>
+      <tr class="item" data-item_id="<%= element.id %>">
         <td><%= element.name %></td>
-        <td><%= element.url %></td>
+        <td><%= element.order %></td>
         <td><%= element.html_tag %></td>
         <td><%= element.html_subtag %></td>
-        <td><%= element.order %></td>
+        <td><%= element.id %></td>
         <td><%= element.project_id %></td>
-        <td><%= link_to 'Show', element %></td>
-        <td><%= link_to 'Edit', edit_element_path(element) %></td>
-        <td><%= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', element, class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_element_path(element), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>

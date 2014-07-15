@@ -1,11 +1,21 @@
 class ElementsController < ApplicationController
-  before_action :set_element, only: [:show, :edit, :update, :destroy]
+  before_action :set_element, only: [:show, :edit, :update, :destroy, :sort]
 
 
+
+  def sort
+    @element = Element.find(params[:id])
+    @element.attributes = params.require(:element).permit(:order_position)
+    @element.save
+
+    # this action will be called via ajax
+    render nothing: true
   # GET /elements
   # GET /elements.json
+  end
+
   def index
-    @elements = Element.all
+    @elements = Element.rank(:order).all
   end
 
   # GET /elements/1
