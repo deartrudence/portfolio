@@ -1,5 +1,5 @@
 class ElementsController < ApplicationController
-  before_action :set_element, only: [:show, :edit, :update, :destroy, :sort]
+  before_action :set_element, only: [:show, :edit, :update, :destroy]
 
 
 

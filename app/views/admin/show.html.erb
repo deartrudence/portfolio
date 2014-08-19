@@ -13,17 +13,56 @@
       <div class="col-md-4 col-md-offset-4">
         <%= link_to "New Project", new_project_path, class: 'btn btn-primary projects' %>
         <hr>
-      <ul>
-        <% @projects.each do |project| %>
-          <li><%= link_to "#{project.name}", edit_project_path(project) %></li>
-          <li><%= link_to edit_project_path(project) do %>
-            <img src="<%=project.feature_img.url%>" class="img-responsive"></li>
-            <li><%= link_to "Delete", project_path(project), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></li>
+
+
+  <div class='row'>
+  <table id="sortable" class="table" data-update_url="<%= sort_projects_path%>">
+
+    <thead>
+      <tr>
+        <th>Order</th>
+        <th>Project</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr class="item" data-item_id="<%= project.id%>">
+          <td>
+            <%= form_for(project) do |f| %>
+              <% if project.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+                  <ul>
+                  <% project.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+              <div class="form-group">
+                <%= f.text_field :project_order, class: 'form-control' %>
+              </div>
+              <div class="actions">
+                <%= f.submit 'Update Order', class: 'btn btn-primary' %>
+              </div>
+              <% end %>
+          </td>
+          <td><%= link_to "#{project.name}", edit_project_path(project) %></td>
+          <td><%= link_to edit_project_path(project) do %>
+            <img src="<%=project.feature_img.url%>" class="img-responsive"></td>
+            <td><%= link_to "Delete", project_path(project), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></td>
           <% end %>
         <% end %>
-      </ul>
-    </div>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 
 
   </div>
-</dvi>
+</div>

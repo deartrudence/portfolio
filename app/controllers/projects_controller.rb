@@ -4,10 +4,22 @@ class ProjectsController < ApplicationController
 
 
 
+  # def sort
+  #   @project = Project.find(params[:id])
+  #   @project.attributes = params.require(:element).permit(:order_position)
+  #   @project.save
+
+  #   # this action will be called via ajax
+  #   render nothing: true
+  # # GET /elements
+  # # GET /elements.json
+  # end
+
+
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.rank(:order).all
   end
 
   # GET /projects/1
@@ -73,6 +85,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :description, :feature_image, :feature_img, :order)
+      params.require(:project).permit(:name, :description, :feature_image, :feature_img, :project_order, :order)
     end
 end
