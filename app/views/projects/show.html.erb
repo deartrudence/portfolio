@@ -36,5 +36,18 @@
       <% end %>
     </ul>
   </div>
+
+  <br><br>
+
+  <div class="row row-centered ">
+    <ul>
+      <% @projects.each do |project| %>
+        <%= link_to project_path(project) do %>
+          <li class='col-md-1 col-sm-6 project_index'>
+            <img src="<%= project.feature_img.url %>" alt="" class='img-repsonsive img'  />
+          </li>
+        <% end %>
+      <% end %>
+  </div>
   
 </div>

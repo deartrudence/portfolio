@@ -5,8 +5,7 @@
       <ul>
         <% @projects.each  do |project| %>
           <%= link_to project_path(project) do %>
-            
-            <li class='col-md-4 col-sm-6 '>
+            <li class='col-md-3 col-sm-6'>
                 <img src="<%= project.feature_img.url %>" alt="" class='img-repsonsive img'  />
              </li>
         <% end %>
