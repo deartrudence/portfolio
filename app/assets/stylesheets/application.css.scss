@@ -90,9 +90,15 @@ iframe {
 	height: 360px;
 }
 
-.row-centered {
-    text-align: center;
-    margin-left: 40px;
+.row.row-centered {
+    /*text-align: center;*/
+    margin-left: auto;
+    width: auto;
+   /* margin-right: auto;*/
+    /*margin-left: 100px;*/
+}
+.row.row-centered li{
+	display: inline-block;
 }
 
 
