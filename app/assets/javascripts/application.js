@@ -13,7 +13,16 @@
 //= require jquery-1.10.2
 //= require jquery_ujs
 //= require jquery-ui-1.10.4
-//= require sort
 //= require 'bootstrap'
 //= require turbolinks
-//= require_tree .
+//= require jquery.superslides.min.js
+//= require smooth-scroll.min.js
+
+
+$(document).ready(function(){
+  $('#slides').superslides();
+  smoothScroll.init({
+    updateURL: true,
+    offset: 100
+  });
+});

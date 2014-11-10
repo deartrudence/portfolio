@@ -1,14 +1,29 @@
+<%= render 'layouts/navbar' %>
 
-<div class="container index_page">
-<h1>Listing projects</h1>
-  <div class="row">
-      <ul>
-        <% @projects.each  do |project| %>
-          <%= link_to project_path(project) do %>
-            <li class='col-md-3 col-sm-6'>
-                <img src="<%= project.feature_img.url %>" alt="" class='img-repsonsive img'  />
-             </li>
-        <% end %>
-        <% end %>
-      </ul>
-                
+<!-- HERO SLIDER 
+============================= -->
+<div class="hero-container">
+  <div id="slides">
+    <ul class="slides-container">
+      <% @projects.order('created_at DESC').each do |project| %>
+        <li class="slide__item">
+          <img class="slide__image" src="<%= project.feature_img.url %>" alt="<%= project.name %>">
+          <%= link_to project_path(project), class: "slide__title" do %>
+            <%= project.name %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    <nav class="slides-navigation">
+      <a href="#" class="next"><span class="icon-arrow-right"></span></a>
+      <a href="#" class="prev"><span class="icon-arrow-left"></span></a>
+    </nav>
+  </div>
+
+  <a data-scroll href="#work" class="move-down"><span class="icon-arrow-down"></span></a>
+</div>
+
+
+<%= render 'listing' %>
+
+<%= render 'layouts/footer' %>

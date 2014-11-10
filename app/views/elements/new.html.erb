@@ -1,15 +1,12 @@
+<div class="admin-container">
+  <div class="wrapper">
+    <h1 class="u-spacer10">New Element for <%= @project.name %></h1>
+    <%= link_to 'Back', edit_project_path(@project), class: 'button u-inlineBlock u-spacer30' %>
 
+    <div class="form-sizer u-spacer20">
+      <%= render 'form' %>
+    </div>
 
-<div class='container edit_element_page'>
-  <div class='row'>
-
-    <h1>Adding new element to project <%=@project.name%></h1>
-
-   		<%= render 'form' %>
-
-    <br>
-    <%= link_to 'Back', edit_project_path(@project), class: 'btn btn-default' %>
-    
 
   </div>
 </div>

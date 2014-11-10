@@ -1,53 +1,46 @@
+<%= render 'layouts/navbar' %>
 
-<div class="container show_page">
+<div class="u-spacer120"></div>
 
-  
-  <!-- Project Description -->
-  <div class='row'>
-    <div class="col-md-12">
-
-    <h1><%= @project.name %></h1>
-
-
-      <!-- Project Description -->
-      <div class"col-md-12">
-        <p class='description' >
-          <%= @project.description %>
-        </p>
+<div class="wrapper">
+  <div class="grid grid--center">
+    <div class="grid__item two-fifths">
+      <div class="u-alignCenter">
+        <h1 class="u-spacer30"><%= @project.name %></h1>
+        <p class="project--desc u-spacer30"><%= @project.description %></p>
+        <hr class="u-spacer30">
+        <p>More stuff here</p>
       </div>
     </div>
   </div>
 
-  <!-- Project Elements (image/video) -->
-  <div class="row">
-    <ul>
-      <% for @element in @project.elements %>
-        <div class="col-xs-12">
-          <li>
-                  <!-- If there's a video url use that, otherwise use uploaded image -->
-                  <% if @element.url.present? %>
-                      <<%=@element.html_tag.html_safe %><%=@element.url%><%=@element.html_subtag.html_safe%>>
-                  <% else %>
-                      <<%=@element.html_tag.html_safe %><%=@element.element_img.url%><%=@element.html_subtag.html_safe%>>
-                    <% end %>
-              
-          </li>
-        </div>
+  <div class="project">
+    <img src="<%= @project.feature_img.url %>" alt="<%= @project.name %>">
+    <% for @element in @project.elements %>
+      <% if @element.url.present? %>
+        <<%=@element.html_tag.html_safe %><%=@element.url%><%=@element.html_subtag.html_safe%>>
+      <% else %>
+        <<%=@element.html_tag.html_safe %><%=@element.element_img.url%><%=@element.html_subtag.html_safe%>>
       <% end %>
-    </ul>
-  </div>
-
-  <br><br>
-
-  <div class="row row-centered ">
-    <ul>
-      <% @projects.each do |project| %>
-        <%= link_to project_path(project) do %>
-          <li class='col-md-1 col-sm-6 project_index'>
-            <img src="<%= project.feature_img.url %>" alt="" class='img-repsonsive img'  />
-          </li>
-        <% end %>
-      <% end %>
+    <% end %>
   </div>
   
-</div>
+
+  <%
+    thisurl = request.original_url
+    thistitle = @project.name
+    thisimage = @project.feature_img.url
+  %>
+  <div class="share u-alignCenter u-spacer200">
+    <p>
+      Share project on 
+      <a href="https://twitter.com/home?status=<%=thisurl%>">Twitter</a>, 
+      <a href="https://pinterest.com/pin/create/bookmarklet/?media=<%=thisimage%>&url=<%=thisurl%>">Pinterest</a>, 
+      <a href="http://www.tumblr.com/share/link?url=<%=thisurl%>&name=<%=thistitle%>">Tumblr</a>, or 
+      <a href="https://www.facebook.com/sharer/sharer.php?u=<%=thisurl%>">Facebook</a>
+    </p>
+  </div>
+
+  <%= render 'listing' %>
+
+</div>  
