@@ -1,0 +1,18 @@
+  <!-- Portfolio Listing
+  ============================= -->
+  <div id="work" class="wrapper u-spacer80 portfolio-listing">
+    <div class="grid grid--flush">
+
+      <% @projects.order('created_at DESC').each do |project| %>
+        <div class="grid__item one-third">
+          <%= link_to project_path(project), class: "thumbnail" do %>
+            <img class="thumbnail__image" src="<%= project.feature_img.url %>" alt="">
+            <div class="thumbnail__details">
+              <p class="thumbnail__name"><%= project.name %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>

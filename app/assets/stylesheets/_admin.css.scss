@@ -1,0 +1,31 @@
+.admin-container{
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  table{
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td{
+    text-align: left;
+    padding: 15px;
+    vertical-align: top;
+    border-top: 1px solid darken($lightGrey, 20%);
+  }
+  
+  td{
+    // border-top: 1px solid darken($lightGrey, 20%);
+  }
+
+  .listing-image,
+  table img,
+  table video{
+    max-width: 400px;
+  }
+  
+  .button{
+    font-size: 14px;
+  }
+}

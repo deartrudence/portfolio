@@ -1,0 +1,20 @@
+body{
+  color: $mediumGrey;
+  font-size: 18px;
+  font-family: "Circular-Medium", sans-serif;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.15s ease-in-out;
+  &:hover{
+    border-color: $mediumGrey;
+  }
+}
+
+p{
+  line-height: 1.6;
+}
+

@@ -1,0 +1,11 @@
+.share{
+  font-size: 14px;
+
+  a{
+    border-bottom: 1px solid $mediumGrey;
+
+    &:hover{
+      border-color: darken($mediumGrey, 30%);
+    }
+  }
+}

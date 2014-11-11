@@ -1,0 +1,51 @@
+.form-container{
+  position: absolute;
+  max-width: 600px;
+  min-width: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-sizer{
+  max-width: 700px;
+}
+
+input[type="email"],
+input[type="password"],
+.input{
+  width: 100%;
+  padding: 15px;
+  border: none;
+  box-shadow: 0 2px 0 darken($lightGrey, 10%);
+}
+
+input[type="button"],
+.button{
+  border: none;
+  background: transparent;
+  color: $mediumGrey;
+  border: 1px solid $darkGrey;
+  padding: 8px 30px;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    background: $darkGrey;
+    color: $lightGrey;
+    border-color: $darkGrey;
+  }
+
+  &.button--secondary{
+    background: $darkGrey;
+    color: $lightGrey;
+
+    &:hover{
+      background: darken($darkGrey, 30%);
+    }
+  }
+}
+
+textarea{
+  min-height: 300px;
+}
