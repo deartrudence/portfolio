@@ -12,10 +12,14 @@
       <div class="grid__item three-quarters">
         <ul class="navbar u-alignRight">
           <li class="navbar-item">
-            <a data-scroll href="#work">Work</a>
+            <% if controller.controller_name == "profile" %>
+              <%= link_to 'Work', root_path %>
+            <% else %>
+              <a data-scroll href="#work">Work</a>
+            <% end %>
           </li>
           <li class="navbar-item">
-            <a href="#">Profile</a>
+            <%= link_to 'Profile', profile_index_path %>
           </li>
           <li class="navbar-item">
             <a href="PUT-HIS-LINK-HERE">LinkedIn</a>
