@@ -3,6 +3,9 @@
   border-bottom: 1px solid $mediumGrey;
   padding: 20px 0;
   margin-bottom: 120px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profile{
@@ -46,5 +49,9 @@
   font-size: 14px;
   .email{
     margin-right: 10px;
+  }
+
+  @media screen and (max-width: 1024px){
+    text-align: center;
   }
 }
