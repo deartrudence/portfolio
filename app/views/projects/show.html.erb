@@ -7,15 +7,24 @@
     <div class="grid__item two-fifths">
       <div class="u-alignCenter">
         <h1 class="u-spacer30"><%= @project.name %></h1>
-        <p class="project--desc u-spacer30"><%= @project.description %></p>
+        <p class="project--desc u-spacer30"><%= h(@project.description).gsub(/\n/, '<br/>').html_safe %></p>
+
         <hr class="u-spacer30">
-        <p>More stuff here</p>
+        <% if @project.extended_description.present? %>
+          <span data-toggle="collapse" data-target="#ex_desc">
+            See more details
+          </span>
+          <div class="collapse project--desc" id="ex_desc">
+            <p class="project--desc u-spacer30"><%= h(@project.extended_description).gsub(/\n/, '<br/>').html_safe %>
+            </p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 
   <div class="project">
-    <img src="<%= @project.feature_img.url %>" alt="<%= @project.name %>">
+    
     <% for @element in @project.elements %>
       <% if @element.url.present? %>
         <<%=@element.html_tag.html_safe %><%=@element.url%><%=@element.html_subtag.html_safe%>>
@@ -42,5 +51,6 @@
   </div>
 
   <%= render 'listing' %>
+  <%= render 'layouts/footer' %>
 
 </div>  

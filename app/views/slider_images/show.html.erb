@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @slider_image.name %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @slider_image.order %>
+</p>
+
+<%= link_to 'Edit', edit_slider_image_path(@slider_image) %> |
+<%= link_to 'Back', slider_images_path %>

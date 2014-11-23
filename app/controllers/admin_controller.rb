@@ -4,6 +4,6 @@ class AdminController < ApplicationController
 
 	def show
 		@elements = Element.all
-		@projects = Project.all
+		@projects = Project.all.order('project_order')
 	end
 end

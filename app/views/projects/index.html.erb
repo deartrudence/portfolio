@@ -5,12 +5,9 @@
 <div class="hero-container">
   <div id="slides">
     <ul class="slides-container">
-      <% @projects.order('created_at DESC').each do |project| %>
+      <% @slider_images.order('slider_order ASC').each do |slider_image| %>
         <li class="slide__item">
-          <img class="slide__image" src="<%= project.feature_img.url %>" alt="<%= project.name %>">
-          <%= link_to project_path(project), class: "slide__title" do %>
-            <%= project.name %>
-          <% end %>
+          <img class="slide__image" src="<%= slider_image.photo.url %>" alt="<%= slider_image.name %>">
         </li>
       <% end %>
     </ul>

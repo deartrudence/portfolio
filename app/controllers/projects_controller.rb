@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    @slider_images = SliderImage.all
   end
 
   # GET /projects/1
@@ -86,6 +87,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :description, :feature_image, :feature_img, :project_order, :order)
+      params.require(:project).permit(:name, :description, :feature_image, :feature_img, :project_order, :order, :extended_description)
     end
 end

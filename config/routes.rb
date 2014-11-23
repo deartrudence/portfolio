@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :slider_images
+
   get 'profile/index'
 
   devise_for :users
@@ -10,9 +12,9 @@ Rails.application.routes.draw do
     post :sort, on: :collection
   end
 
-  resources :elements do
-    post :sort, on: :collection
-  end
+  # resources :elements do
+  #   post :sort, on: :collection
+  # end
 
   get 'admin' => 'admin#show'
 
