@@ -19,10 +19,3 @@
 //= require smooth-scroll.min.js
 
 
-$(document).ready(function(){
-  $('#slides').superslides();
-  smoothScroll.init({
-    updateURL: true,
-    offset: 100
-  });
-});

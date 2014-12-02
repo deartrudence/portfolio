@@ -24,3 +24,13 @@
 <%= render 'listing' %>
 
 <%= render 'layouts/footer' %>
+
+<script>
+  $(document).ready(function(){
+    $('#slides').superslides();
+    smoothScroll.init({
+      updateURL: true,
+      offset: 100
+    });
+  });
+</script>
