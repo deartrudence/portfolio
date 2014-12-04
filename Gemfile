@@ -8,6 +8,9 @@ gem 'rails', '4.1.1'
 group :development, :test do
 # Use sqlite3 as the database for Active Record	
 	gem 'sqlite3' # -v '1.3.9'
+	gem 'better_errors'
+	gem 'binding_of_caller'
+	gem 'annotate'
 end
 
 group :production do

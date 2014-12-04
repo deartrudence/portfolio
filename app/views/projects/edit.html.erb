@@ -46,28 +46,28 @@
       <tbody>
         <% for element in @project.elements %>
           <tr class="item" data-item_id="<%= element.id%>">   
-                                      <tr>
-                            <td> <%= form_for(element) do |f| %>
-                              <% if element.errors.any? %>
-                                <div id="error_explanation">
-                                  <h2><%= pluralize(element.errors.count, "error") %> prohibited this element from being saved:</h2>
+            <tr>
+              <td> <%= form_for(element) do |f| %>
+                <% if element.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(element.errors.count, "error") %> prohibited this element from being saved:</h2>
 
-                                  <ul>
-                                  <% element.errors.full_messages.each do |message| %>
-                                    <li><%= message %></li>
-                                  <% end %>
-                                  </ul>
-                                </div>
-                              <% end %>
+                    <ul>
+                    <% element.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
 
-                              <div class="form-group u-spacer10">
-                                <%= f.text_field :order, class: 'input' %>
-                              </div>
-                              <div class="actions">
-                                <%= f.submit 'Update Order', class: 'button' %>
-                              </div>
-                              <% end %>
-                            </td>   
+                <div class="form-group u-spacer10">
+                  <%= f.text_field :order, class: 'input' %>
+                </div>
+                <div class="actions">
+                  <%= f.submit 'Update Order', class: 'button' %>
+                </div>
+                <% end %>
+              </td>   
             <td><%= element.name %></td>
             <td>
               <!-- If there's a video url use that, otherwise use uploaded image -->
