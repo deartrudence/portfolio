@@ -12,7 +12,7 @@
         <hr class="u-spacer30">
         <% if @project.extended_description.present? %>
           <span data-toggle="collapse" data-target="#ex_desc">
-            See more details
+            Show Credits
           </span>
           <div class="collapse project--desc" id="ex_desc">
             <p class="project--desc u-spacer30"><%= h(@project.extended_description).gsub(/\n/, '<br/>').html_safe %>
