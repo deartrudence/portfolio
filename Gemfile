@@ -16,6 +16,7 @@ end
 group :production do
 	gem 'pg' #postgresql gem
 	gem 'rails_12factor'
+	gem 'puma'
 end
 
 #for image management
