@@ -8,11 +8,15 @@ gem 'rails', '4.1.1'
 group :development, :test do
 # Use sqlite3 as the database for Active Record	
 	gem 'sqlite3' # -v '1.3.9'
+	gem 'better_errors'
+	gem 'binding_of_caller'
+	gem 'annotate'
 end
 
 group :production do
 	gem 'pg' #postgresql gem
 	gem 'rails_12factor'
+	gem 'puma'
 end
 
 #for image management
