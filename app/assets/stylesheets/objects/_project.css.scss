@@ -7,3 +7,21 @@
     }
   }
 }
+
+.toggle-ex-desc{
+  cursor: pointer;
+}
+
+#ex_desc{
+  margin-top: 40px;
+  max-height: 0;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  opacity: 0;
+}
+
+#ex_desc.active{
+  max-height: 1000px;
+  margin-top: 0;
+  opacity: 1;
+}

@@ -11,9 +11,9 @@
 
         <hr class="u-spacer30">
         <% if @project.extended_description.present? %>
-          <span data-toggle="collapse" data-target="#ex_desc">
+          <a class="toggle-ex-desc" data-target="#ex_desc">
             See more details
-          </span>
+          </a>
           <div class="collapse project--desc" id="ex_desc">
             <p class="project--desc u-spacer30"><%= h(@project.extended_description).gsub(/\n/, '<br/>').html_safe %>
             </p>
@@ -22,6 +22,10 @@
       </div>
     </div>
   </div>
+
+  <style>
+    
+  </style>
 
   <div class="project">
     
