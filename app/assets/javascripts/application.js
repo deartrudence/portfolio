@@ -17,11 +17,3 @@
 //= require turbolinks
 //= require jquery.superslides.min.js
 //= require smooth-scroll.min.js
-
-
-$(document).ready(function(){
-$('.toggle-ex-desc').on('click', function(){
-    var item = $(this).attr('data-target');
-    $(item).toggleClass('active');
-  })
-});
