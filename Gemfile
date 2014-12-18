@@ -27,6 +27,9 @@ gem 'aws-s3'
 #User Authentication
 gem 'devise'
 
+#performance monitoring
+gem 'newrelic_rpm'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
